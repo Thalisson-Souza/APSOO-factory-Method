@@ -1,3 +1,5 @@
+package factorymethod.documento;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,6 +16,8 @@ public class DocumentoTexto implements Documento {
         try {
             if (Files.exists(caminhoArquivo)) {
                 conteudo = Files.readString(caminhoArquivo, StandardCharsets.UTF_8);
+            } else {
+                System.out.println("Arquivo de texto não encontrado. Será usado o conteúdo inicial.");
             }
             System.out.println("Documento de texto aberto: " + conteudo);
         } catch (IOException e) {
@@ -24,7 +28,7 @@ public class DocumentoTexto implements Documento {
     @Override
     public void editar() {
         conteudo += " Edição realizada no documento de texto.";
-        System.out.println("Documento de texto editado.");
+        System.out.println("Documento de texto editado em memória.");
     }
 
     @Override

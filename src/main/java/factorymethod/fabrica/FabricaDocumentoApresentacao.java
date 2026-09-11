@@ -1,3 +1,8 @@
+package factorymethod.fabrica;
+
+import factorymethod.documento.Documento;
+import factorymethod.documento.DocumentoApresentacao;
+
 /** ConcreteCreator para documentos de apresentação. */
 public class FabricaDocumentoApresentacao implements FabricaDocumento {
     @Override

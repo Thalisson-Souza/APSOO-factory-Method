@@ -1,3 +1,5 @@
+package factorymethod.documento;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,6 +16,8 @@ public class DocumentoApresentacao implements Documento {
         try {
             if (Files.exists(caminhoArquivo)) {
                 conteudo = Files.readString(caminhoArquivo, StandardCharsets.UTF_8);
+            } else {
+                System.out.println("Arquivo de apresentação não encontrado. Será usado o conteúdo inicial.");
             }
             System.out.println("Apresentação aberta: " + conteudo);
         } catch (IOException e) {
@@ -24,7 +28,7 @@ public class DocumentoApresentacao implements Documento {
     @Override
     public void editar() {
         conteudo += " Edição realizada na apresentação.";
-        System.out.println("Apresentação editada.");
+        System.out.println("Apresentação editada em memória.");
     }
 
     @Override

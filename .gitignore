@@ -1,0 +1,5 @@
+target/
+*.class
+*.txt
+*.juth.lock
+.idea/
